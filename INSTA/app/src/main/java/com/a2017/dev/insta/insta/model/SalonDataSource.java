@@ -18,7 +18,7 @@ public class SalonDataSource {
 
     private SQLiteDatabase sqLiteDatabase;
     private MySQLiteSalon mySQLiteSalon;
-    private String[] allColumns = {MySQLiteSalon.COLUMN_SALON_ID, MySQLiteSalon.COLUMN_SALON_NAME,
+    private String[] allColumns = {MySQLiteSalon.COLUMN_SALON_ID, MySQLiteSalon.COLUMN_SALON_NOM,
                                     MySQLiteSalon.COLUMN_SALON_ADRESS, MySQLiteSalon.COLUMN_SALON_DATE,
                                     MySQLiteSalon.COLUMN_SALON_ACTIVE};
     private Salon salon;
@@ -37,7 +37,7 @@ public class SalonDataSource {
 
     public boolean createSalon(Salon s) {
         ContentValues values = new ContentValues();
-        values.put(MySQLiteSalon.COLUMN_SALON_NAME, s.getNom());
+        values.put(MySQLiteSalon.COLUMN_SALON_NOM, s.getNom());
         values.put(MySQLiteSalon.COLUMN_SALON_ADRESS, s.getAdresse());
         values.put(MySQLiteSalon.COLUMN_SALON_DATE, s.getDate());
         values.put(MySQLiteSalon.COLUMN_SALON_ACTIVE, s.is_active());
@@ -71,8 +71,8 @@ public class SalonDataSource {
                 + " = " + id, null);
     }
 
-    public List<Salon> getAllSalon() {
-        List<Salon> salons = new ArrayList<Salon>();
+    public ArrayList<Salon> getAllSalon() {
+        ArrayList<Salon> salons = new ArrayList<Salon>();
 
         Cursor cursor = sqLiteDatabase.query(MySQLiteSalon.TABLE_SALON,
                 allColumns, null, null, null, null, null);
@@ -87,8 +87,9 @@ public class SalonDataSource {
         return salons;
     }
 
-    public List<Salon> getAllSalonActive() {
-        List<Salon> salons = new ArrayList<Salon>();
+    public ArrayList<Salon> getAllSalonActive() {
+        ArrayList<Salon> salons = new ArrayList<Salon>();
+        Log.d("Nom",MySQLiteSalon.COLUMN_SALON_NOM);
 
         Cursor cursor = sqLiteDatabase.query(MySQLiteSalon.TABLE_SALON,
                 allColumns, MySQLiteSalon.COLUMN_SALON_ACTIVE+ " = " + 1, null,

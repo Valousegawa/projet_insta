@@ -6,7 +6,7 @@ package com.a2017.dev.insta.insta.model;
 
 public class Salon {
     private int id;
-    private String nom;
+    private String name;
     private String adresse;
     private String date;
     private int is_active;
@@ -16,7 +16,7 @@ public class Salon {
 
     public Salon(int id, String nom, String adresse, String date, int is_active) {
         this.id = id;
-        this.nom = nom;
+        this.name = nom;
         this.adresse = adresse;
         this.date = date;
         this.is_active = is_active;
@@ -31,11 +31,11 @@ public class Salon {
     }
 
     public String getNom() {
-        return nom;
+        return name;
     }
 
     public void setNom(String nom) {
-        this.nom = nom;
+        this.name = nom;
     }
 
     public String getAdresse() {
