@@ -43,6 +43,4 @@
             android:layout_marginTop="100dp"/>
     </LinearLayout>
 
-
-
 </android.support.constraint.ConstraintLayout>
