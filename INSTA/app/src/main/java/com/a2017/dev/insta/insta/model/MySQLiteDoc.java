@@ -13,6 +13,7 @@ public class MySQLiteDoc extends SQLiteOpenHelper {
 
     public static final String TABLE_CONTACT = "contacts";
     public static final String COLUMN_ID = "_id";
+    public static final String COLUMN_ID_SALON = "id_salon";
     public static final String COLUMN_NAME = "nom";
     public static final String COLUMN_SURNAME = "prenom";
     public static final String COLUMN_ADRESS = "adresse";
@@ -32,15 +33,17 @@ public class MySQLiteDoc extends SQLiteOpenHelper {
     private static final String DATABASE_CREATE = "create table "
             + TABLE_CONTACT + "("
             + COLUMN_ID + " integer primary key autoincrement, "
-            + COLUMN_NAME + " text not null"
-            + COLUMN_SURNAME + "text not null"
-            + COLUMN_ADRESS + "text not null"
-            + COLUMN_DATE + "date not null"
-            + COLUMN_CP + "text not null"
-            + COLUMN_CITY + "text not null"
-            + COLUMN_PHONE + "text null"
-            + COLUMN_MOBILE + "text null"
-            + COLUMN_MAIL + "text not null"
+            + COLUMN_ID_SALON + "integer null, "
+            + COLUMN_NAME + " text not null, "
+            + COLUMN_SURNAME + " text not null, "
+            + COLUMN_ADRESS + " text not null, "
+            + COLUMN_DATE + " date not null, "
+            + COLUMN_CP + " text not null, "
+            + COLUMN_CITY + " text not null, "
+            + COLUMN_PHONE + " text null, "
+            + COLUMN_MOBILE + " text null, "
+            + COLUMN_MAIL + " text not null, "
+            +COLUMN_FORMATION + " text null"
             +");";
 
 
