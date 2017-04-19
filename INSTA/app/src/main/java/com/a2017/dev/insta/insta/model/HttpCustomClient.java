@@ -9,8 +9,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
-import org.apache.http.*;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.util.Log;
