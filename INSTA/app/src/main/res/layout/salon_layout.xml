@@ -30,7 +30,9 @@
         android:id="@+id/dp_salon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"></DatePicker>
+        android:layout_gravity="center">
+
+    </DatePicker>
 
 
     <EditText
