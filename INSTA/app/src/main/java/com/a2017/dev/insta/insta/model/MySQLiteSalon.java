@@ -13,7 +13,7 @@ public class MySQLiteSalon extends SQLiteOpenHelper{
 
     public static final String TABLE_SALON = "salon";
     public static final String COLUMN_SALON_ID = "_id";
-    public static final String COLUMN_SALON_NAME = "nom";
+    public static final String COLUMN_SALON_NOM = "nom_salon";
     public static final String COLUMN_SALON_ADRESS = "adresse";
     public static final String COLUMN_SALON_DATE = "date";
     public static final String COLUMN_SALON_ACTIVE = "is_active";
@@ -23,10 +23,10 @@ public class MySQLiteSalon extends SQLiteOpenHelper{
     private static final int DATABASE_VERSION = 1;
 
     // Commande sql pour la création de la base de données
-    private static final String DATABASE_CREATE = "create table "
+    public static final String DATABASE_CREATE = "create table "
             + TABLE_SALON + "("
             + COLUMN_SALON_ID + " integer primary key autoincrement, "
-            + COLUMN_SALON_NAME + "text not null, "
+            + COLUMN_SALON_NOM + " text not null, "
             + COLUMN_SALON_ADRESS + " text not null, "
             + COLUMN_SALON_DATE + " date not null, "
             + COLUMN_SALON_ACTIVE + " integer not null"
