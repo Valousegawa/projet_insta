@@ -1,8 +1,54 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar.Fullscreen">
+        <!-- Background for all views -->
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:buttonStyle">@style/MyButton</item>
+        <item name="android:radioButtonStyle">@style/MyRadio</item>
+        <item name="android:checkboxStyle">@style/MyCheckBox</item>
+        <item name="android:editTextStyle">@style/MyEditText</item>
+        <item name="android:datePickerStyle">@style/MyDatePicker</item>
+    </style>
+
+    <!-- Style des boutons -->
+    <style name="MyButton" parent="android:Widget.Material.Button">
+        <item name="android:textColor">@color/colorPurple</item>
+        <item name="android:background">@color/colorButton</item>
+    </style>
+
+    <!-- Style des radio boutons -->
+    <style name="MyRadio" parent="android:Widget.Material.Light.CompoundButton.RadioButton">
+        <item name="android:buttonTint">@color/colorPurple</item>
+    </style>
+
+    <!-- Style des checkbox -->
+    <style name="MyCheckBox" parent="android:Widget.Material.Light.CompoundButton.CheckBox">
+        <item name="android:buttonTint">@color/colorPurple</item>
+    </style>
+
+    <!-- Style editText-->
+    <style name="MyEditText" parent="android:Widget.Material.Light.EditText">
+        <item name="android:backgroundTint">@color/colorOrange</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <!-- Text color -->
+    <style name="MyTextColor" parent="android:Widget.Material.Light.EditText">
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <!-- DatePicker Style -->
+    <style name="MyDatePicker" parent="android:Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/colorOrange</item>
+        <item name="android:calendarTextColor">@color/colorText</item>
+        <item name="android:dayOfWeekBackground">@color/colorOrange</item>
+        <item name="android:dayOfWeekTextAppearance">@color/colorOrange</item>
+        <item name="android:colorBackground">@color/colorButton</item>
+        <item name="android:yearListSelectorColor">@color/colorOrangeTrans</item>
+        <item name="android:colorFocusedHighlight">@color/colorOrange</item>
+        <item name="android:datePickerMode">calendar</item>
     </style>
 
 </resources>
