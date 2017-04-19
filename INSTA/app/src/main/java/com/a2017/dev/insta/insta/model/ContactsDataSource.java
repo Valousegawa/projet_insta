@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.a2017.dev.insta.insta.ContactActivity;
 
 import org.w3c.dom.Comment;
 
@@ -23,7 +27,7 @@ public class ContactsDataSource {
     private String[] allColumns = {MySQLiteDoc.COLUMN_ID, MySQLiteDoc.COLUMN_NAME, MySQLiteDoc.COLUMN_SURNAME,
                         MySQLiteDoc.COLUMN_ADRESS, MySQLiteDoc.COLUMN_CP, MySQLiteDoc.COLUMN_CITY,
                         MySQLiteDoc.COLUMN_DATE, MySQLiteDoc.COLUMN_PHONE, MySQLiteDoc.COLUMN_MOBILE,
-                        MySQLiteDoc.COLUMN_MAIL, MySQLiteDoc.COLUMN_FORMATION };
+                        MySQLiteDoc.COLUMN_MAIL};
     private Contact contact;
 
     public ContactsDataSource(Context context){
@@ -49,15 +53,17 @@ public class ContactsDataSource {
         values.put(MySQLiteDoc.COLUMN_PHONE, c.getNumTel());
         values.put(MySQLiteDoc.COLUMN_MOBILE, c.getNumMobile());
         values.put(MySQLiteDoc.COLUMN_MAIL, c.getEmail());
-        values.put(MySQLiteDoc.COLUMN_FORMATION, c.getFormationSouhaitee());
+        //values.put(MySQLiteDoc.COLUMN_FORMATION, c.getFormationSouhaitee());
 
         long insertId = sqLiteDatabase.insert(MySQLiteDoc.TABLE_CONTACT, null,
                 values);
+
         Cursor cursor = sqLiteDatabase.query(MySQLiteDoc.TABLE_CONTACT,
                 allColumns, MySQLiteDoc.COLUMN_ID + " = " + insertId, null,
                 null, null, null);
         cursor.moveToFirst();
         Contact contact = cursorToContact(cursor);
+        Log.d("Debug", contact.getDateNaissance());
         cursor.close();
         return insertId !=0;
     }
@@ -81,7 +87,6 @@ public class ContactsDataSource {
             contacts.add(contact);
             cursor.moveToNext();
         }
-        // assurez-vous de la fermeture du curseur
         cursor.close();
         return contacts;
     }
@@ -89,17 +94,17 @@ public class ContactsDataSource {
     private Contact cursorToContact(Cursor cursor) {
         Contact contact = new Contact();
         contact.setId(cursor.getInt(0));
-        contact.setIdSalon(cursor.getInt(1));
-        contact.setNom(cursor.getString(2));
-        contact.setPrenom(cursor.getString(3));
-        contact.setAdresse(cursor.getString(4));
-        contact.setCodePostal(cursor.getString(5));
-        contact.setVille(cursor.getString(6));
-        contact.setDateNaissance(cursor.getString(7));
-        contact.setNumTel(cursor.getString(8));
-        contact.setNumMobile(cursor.getString(9));
-        contact.setEmail(cursor.getString(10));
-        contact.setFormationSouhaitee(cursor.getString(11));
+        contact.setNom(cursor.getString(1));
+        contact.setPrenom(cursor.getString(2));
+        contact.setAdresse(cursor.getString(3));
+        contact.setCodePostal(cursor.getString(4));
+        contact.setVille(cursor.getString(5));
+        contact.setDateNaissance(cursor.getString(6));
+        contact.setNumTel(cursor.getString(7));
+        contact.setNumMobile(cursor.getString(8));
+        contact.setEmail(cursor.getString(9));
+        //contact.setIdSalon(cursor.getInt(10));
+        //contact.setFormationSouhaitee(cursor.getString(10));
 
         return contact;
     }
