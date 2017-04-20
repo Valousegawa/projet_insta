@@ -113,6 +113,7 @@ public class ContactActivity extends Activity{
     }
 
     public Contact setContact(Contact contact){
+        contact.setIdSalon(getIntent().getIntExtra("id_salon",0));
         contact.setNom(nom.getText().toString());
         contact.setPrenom(prenom.getText().toString());
         contact.setDateNaissance(date.getYear()+"-"+date.getMonth()+"-"+date.getDayOfMonth());

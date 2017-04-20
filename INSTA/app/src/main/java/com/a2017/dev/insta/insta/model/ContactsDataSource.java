@@ -2,6 +2,7 @@ package com.a2017.dev.insta.insta.model;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,7 +25,7 @@ public class ContactsDataSource {
     //Champs BDD
     private SQLiteDatabase sqLiteDatabase;
     private MySQLiteDoc sqLiteDoc;
-    private String[] allColumns = {MySQLiteDoc.COLUMN_ID, MySQLiteDoc.COLUMN_NAME, MySQLiteDoc.COLUMN_SURNAME,
+    private String[] allColumns = {MySQLiteDoc.COLUMN_ID, MySQLiteDoc.COLUMN_ID_SALON, MySQLiteDoc.COLUMN_NAME, MySQLiteDoc.COLUMN_SURNAME,
                         MySQLiteDoc.COLUMN_ADRESS, MySQLiteDoc.COLUMN_CP, MySQLiteDoc.COLUMN_CITY,
                         MySQLiteDoc.COLUMN_DATE, MySQLiteDoc.COLUMN_PHONE, MySQLiteDoc.COLUMN_MOBILE,
                         MySQLiteDoc.COLUMN_MAIL};
@@ -44,6 +45,7 @@ public class ContactsDataSource {
 
     public boolean createContact(Contact c) {
         ContentValues values = new ContentValues();
+        values.put(MySQLiteDoc.COLUMN_ID_SALON, c.getIdSalon());
         values.put(MySQLiteDoc.COLUMN_NAME, c.getNom());
         values.put(MySQLiteDoc.COLUMN_SURNAME, c.getPrenom());
         values.put(MySQLiteDoc.COLUMN_ADRESS, c.getAdresse());
