@@ -87,7 +87,17 @@ public class ContactActivity extends Activity{
 
                 mysql.open();
                 setContact(contact);
-                mysql.createContact(contact);
+                //mysql.createContact(contact);
+                System.out.println(contact.getIdSalon()+"\n"
+                        +contact.getNom()+"\n"
+                        +contact.getPrenom()+"\n"
+                        +contact.getDateNaissance()+"\n"
+                        +contact.getAdresse()+"\n"
+                        +contact.getCodePostal()+"\n"
+                        +contact.getVille()+"\n"
+                        +contact.getNumTel()+"\n"
+                        +contact.getNumMobile()+"\n"
+                        +contact.getEmail()+"\n");
 
                 //Intent i = new Intent(ContactActivity.this, Contact2Activity.class);
                 //startActivity(i);
@@ -116,7 +126,7 @@ public class ContactActivity extends Activity{
         contact.setIdSalon(getIntent().getIntExtra("id_salon",0));
         contact.setNom(nom.getText().toString());
         contact.setPrenom(prenom.getText().toString());
-        contact.setDateNaissance(date.getYear()+"-"+date.getMonth()+"-"+date.getDayOfMonth());
+        contact.setDateNaissance(date.getYear()+"-"+(date.getMonth()+1)+"-"+date.getDayOfMonth());
         contact.setEmail(email.getText().toString());
         contact.setAdresse(adresse.getText().toString());
         contact.setVille(ville.getText().toString());
