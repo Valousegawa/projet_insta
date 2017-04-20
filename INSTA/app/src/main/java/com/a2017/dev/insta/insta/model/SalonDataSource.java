@@ -55,6 +55,17 @@ public class SalonDataSource {
         return insertId !=0;
     }
 
+    public boolean updateSalon(Salon s){
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteSalon.COLUMN_SALON_NOM, s.getNom());
+        values.put(MySQLiteSalon.COLUMN_SALON_ADRESS, s.getAdresse());
+        values.put(MySQLiteSalon.COLUMN_SALON_DATE, s.getDate());
+        values.put(MySQLiteSalon.COLUMN_SALON_ACTIVE, s.is_active());
+        long updateId = sqLiteDatabase.update(MySQLiteSalon.TABLE_SALON, values, MySQLiteSalon.COLUMN_SALON_ID
+                + " = " + s.getId(), null);
+        return updateId !=0;
+    }
+
     public  void clotureSalon(Salon salon){
         long id = salon.getId();
         System.out.println("Salon cloture with id: " + id);

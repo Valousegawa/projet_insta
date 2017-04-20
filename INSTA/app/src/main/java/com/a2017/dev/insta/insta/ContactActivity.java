@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -13,6 +15,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
+import android.widget.ViewAnimator;
 
 import java.util.Calendar;
 import java.util.List;
@@ -36,7 +39,9 @@ public class ContactActivity extends Activity{
     private EditText tel;
     private EditText mob;
     private EditText email;
-    private Button btnValid;
+    private Button btnNext, btnPre, btnValid;
+    private ViewAnimator viewAnimator;
+    private Animation slide_in_left, slide_out_right;
     private Contact contact;
     private ContactsDataSource mysql;
 
@@ -55,6 +60,26 @@ public class ContactActivity extends Activity{
         int mMonth = c.get(Calendar.MONTH);
         int mDay = c.get(Calendar.DAY_OF_MONTH);
         date.updateDate(mYear, mMonth, mDay);
+
+        slide_in_left = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
+        slide_out_right = AnimationUtils.loadAnimation(this, android.R.anim.fade_out);
+
+        viewAnimator.setInAnimation(slide_out_right);
+        viewAnimator.setOutAnimation(slide_in_left);
+
+        btnPre.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View arg0) {
+                viewAnimator.showPrevious();
+            }});
+
+        btnNext.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View arg0) {
+                viewAnimator.showNext();
+            }});
 
         btnValid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +106,10 @@ public class ContactActivity extends Activity{
         tel = (EditText) findViewById(R.id.et_fixe);
         mob = (EditText) findViewById(R.id.et_mobile);
         email = (EditText) findViewById(R.id.et_mail);
-        btnValid = (Button) findViewById(R.id.btn_next);
+        btnNext = (Button) findViewById(R.id.btn_next);
+        btnPre = (Button) findViewById(R.id.btn_prev);
+        btnValid = (Button) findViewById(R.id.btn_valider);
+        viewAnimator = (ViewAnimator)findViewById(R.id.viewanimator);
     }
 
     public Contact setContact(Contact contact){
