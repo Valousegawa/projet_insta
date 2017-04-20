@@ -46,7 +46,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Date de naissance"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="20dp"/>
 
                     <DatePicker
                         android:id="@+id/dp_bd"
@@ -55,9 +56,7 @@
                         android:layout_gravity="center"
                         android:ems="10"
                         android:hint="Date de naissance"
-                        android:padding="-40dp"
-                        android:scaleX="0.80"
-                        android:scaleY="0.80" />
+                         />
 
                     <EditText
                         android:id="@+id/et_adresse"
