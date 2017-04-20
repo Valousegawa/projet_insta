@@ -38,6 +38,22 @@ public class AdminPanelActivity extends Activity {
                 startActivity(modified);
             }
         });
+
+        cloture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent clot = new Intent(getApplicationContext(), ClotureSalonActivity.class);
+                startActivity(clot);
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent del = new Intent(getApplicationContext(), DeleteSalonActivity.class);
+                startActivity(del);
+            }
+        });
     }
 
     public void deserialiser(){

@@ -57,16 +57,18 @@ public class CreateSalonActivity extends Activity{
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (getIntent().getStringExtra("Text") != null){
-                    mysql.open();
-                    setSalon(salon);
-                    mysql.updateSalon(salon);
-                    finish();
-                }
                 mysql.open();
                 setSalon(salon);
-                mysql.createSalon(salon);
-                finish();
+                if (getIntent().getStringExtra("Text") != null){
+                    salon.setId(getIntent().getIntExtra("Id", 0));
+                    mysql.updateSalon(salon);
+
+                    finish();
+                }
+                else{
+                    mysql.createSalon(salon);
+                    finish();
+                }
             }
         });
     }

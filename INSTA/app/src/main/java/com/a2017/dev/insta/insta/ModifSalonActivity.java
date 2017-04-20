@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -43,49 +44,45 @@ public class ModifSalonActivity extends Activity{
         mysql.open();
 
         final ArrayList<Salon> tabSalon = mysql.getAllSalonActive();
-        if(tabSalon.isEmpty()){
-            Salon bla = new Salon(0,"Empty", "Empty", "0-0-0", 1);
-            tabSalon.add(0, bla);
-        }
-
         adapter = new SalonAdapter(ModifSalonActivity.this, tabSalon);
         listView.setAdapter(adapter);
+        listView.setEmptyView(findViewById(R.id.empty_list));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent mod = new Intent(getApplicationContext(), CreateSalonActivity.class);
                 mod.putExtra("Text", "Modifier le salon");
+                mod.putExtra("Id", tabSalon.get(position).getId());
                 mod.putExtra("Nom", tabSalon.get(position).getNom());
                 mod.putExtra("Date", tabSalon.get(position).getDate());
                 mod.putExtra("Adresse", tabSalon.get(position).getAdresse());
                 startActivity(mod);
             }
         });
+        ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
+    }
 
-        /*
-        mysql = new SalonDataSource(this);
-
-        salon = new Salon();
-
-        Calendar c = Calendar.getInstance();
-        int mYear = c.get(Calendar.YEAR);
-        int mMonth = c.get(Calendar.MONTH);
-        int mDay = c.get(Calendar.DAY_OF_MONTH);
-        dateEvent.updateDate(mYear, mMonth, mDay);
-
-        create.setOnClickListener(new View.OnClickListener() {
+    protected void onResume() {
+        super.onResume();
+        mysql.open();
+        final ArrayList<Salon> tabSalon = mysql.getAllSalonActive();
+        adapter = new SalonAdapter(this, tabSalon);
+        listView.setAdapter(adapter);
+        listView.setEmptyView(findViewById(R.id.empty_list));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                mysql.open();
-                setSalon(salon);
-                Log.d("Nom", salon.getNom());
-                Log.d("Date", salon.getDate());
-                Log.d("Adresse", salon.getAdresse());
-                mysql.createSalon(salon);
-                finish();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent mod = new Intent(getApplicationContext(), CreateSalonActivity.class);
+                mod.putExtra("Text", "Modifier le salon");
+                mod.putExtra("Id", tabSalon.get(position).getId());
+                mod.putExtra("Nom", tabSalon.get(position).getNom());
+                mod.putExtra("Date", tabSalon.get(position).getDate());
+                mod.putExtra("Adresse", tabSalon.get(position).getAdresse());
+                startActivity(mod);
             }
         });
-        */
+        ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
+        System.out.println("Activity focused");
     }
 
     public void deserialiser(){
