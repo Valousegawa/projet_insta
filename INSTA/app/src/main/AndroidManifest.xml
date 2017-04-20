@@ -20,9 +20,12 @@
         </activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".ContactActivity"></activity>
-        <activity android:name=".Contact2Activity"></activity>
         <activity android:name=".ConnexionActivity"></activity>
         <activity android:name=".AdminPanelActivity"></activity>
+        <activity android:name=".CreateSalonActivity"></activity>
+        <activity android:name=".ModifSalonActivity"></activity>
+        <activity android:name=".DeleteSalonActivity"></activity>
+        <activity android:name=".ClotureSalonActivity"></activity>
     </application>
 
 </manifest>
