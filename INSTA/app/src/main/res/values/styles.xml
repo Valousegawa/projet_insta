@@ -2,25 +2,34 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar.Fullscreen">
-        <!-- Background for all views -->
-        <item name="android:windowBackground">@color/colorBackground</item>
-        <item name="android:padding">15dp</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:buttonStyle">@style/MyButton</item>
-        <item name="android:radioButtonStyle">@style/MyRadio</item>
-        <item name="android:checkboxStyle">@style/MyCheckBox</item>
-        <item name="android:editTextStyle">@style/MyEditText</item>
-        <item name="android:datePickerStyle">@style/MyDatePicker</item>
+            <!-- Background for all views -->
+            <item name="android:windowBackground">@color/colorBackground</item>
+            <item name="android:paddingRight">10dp</item>
+            <item name="android:paddingLeft">10dp</item>
+            <item name="android:layout_marginTop">15dp</item>
+            <item name="android:layout_marginBottom">10dp</item>
+            <item name="android:windowNoTitle">true</item>
+            <!-- Buttons -->
+            <item name="android:buttonStyle">@style/MyButton</item>
+            <item name="android:radioButtonStyle">@style/MyRadio</item>
+            <item name="android:checkboxStyle">@style/MyCheckBox</item>
+            <!-- Text -->
+            <item name="android:editTextStyle">@style/MyEditText</item>
+            <item name="android:textViewStyle">@style/MyTextView</item>
+            <!-- DatePicker -->
+            <item name="android:datePickerStyle">@style/MyDatePicker</item>
+            <!-- ListView -->
+            <item name="android:listViewStyle">@style/MyListView</item>
     </style>
 
     <!-- Style des boutons -->
     <style name="MyButton" parent="android:Widget.Material.Button">
         <item name="android:textColor">@color/colorPurple</item>
         <item name="android:background">@color/colorButton</item>
-        <item name="android:radius">3dp</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:minWidth">30dp</item>
     </style>
 
     <!-- Style des radio boutons -->
@@ -35,8 +44,14 @@
 
     <!-- Style editText-->
     <style name="MyEditText" parent="android:Widget.Material.Light.EditText">
-        <item name="android:backgroundTint">@color/colorOrange</item>
+        <item name="android:backgroundTint">@color/colorOrangeTrans</item>
         <item name="android:textColor">@color/colorText</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+    </style>
+
+    <!-- Style TextView -->
+    <style name="MyTextView" parent="android:Widget.Material.Light.TextView">
+        <item name="android:textSize">25dp</item>
     </style>
 
     <!-- Text color -->
@@ -54,6 +69,15 @@
         <item name="android:yearListSelectorColor">@color/colorOrangeTrans</item>
         <item name="android:colorFocusedHighlight">@color/colorOrange</item>
         <item name="android:datePickerMode">calendar</item>
+        <item name="android:unfocusedMonthDateColor">@color/colorOrangeTrans</item>
+    </style>
+
+    <!-- Style ListView -->
+    <style name="MyListView" parent="android:Widget.Material.Light.ListView">
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:listPreferredItemHeight">10dp</item>
     </style>
 
 </resources>

@@ -55,12 +55,24 @@ public class SalonDataSource {
         return insertId !=0;
     }
 
+    public void updateSalon(Salon s){
+        ContentValues values = new ContentValues();
+        System.out.println("Salon updated with id: " + s.getId());
+        values.put(MySQLiteSalon.COLUMN_SALON_NOM, s.getNom());
+        values.put(MySQLiteSalon.COLUMN_SALON_ADRESS, s.getAdresse());
+        values.put(MySQLiteSalon.COLUMN_SALON_DATE, s.getDate());
+        values.put(MySQLiteSalon.COLUMN_SALON_ACTIVE, s.is_active());
+        sqLiteDatabase.update(MySQLiteSalon.TABLE_SALON, values, MySQLiteSalon.COLUMN_SALON_ID
+                + " = " + s.getId(), null);
+    }
+
     public  void clotureSalon(Salon salon){
         long id = salon.getId();
         System.out.println("Salon cloture with id: " + id);
         ContentValues values = new ContentValues();
         values.put(MySQLiteSalon.COLUMN_SALON_ACTIVE, 0);
-        sqLiteDatabase.update(MySQLiteSalon.TABLE_SALON, values, null, null);
+        sqLiteDatabase.update(MySQLiteSalon.TABLE_SALON, values, MySQLiteSalon.COLUMN_SALON_ID
+                + " = " + id, null);
         salon.setIs_active(0);
     }
 
