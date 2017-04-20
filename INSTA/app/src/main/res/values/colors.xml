@@ -5,15 +5,20 @@
     <color name="colorOrange">#D9612B</color>
     <color name="colorPurple">#8A1F76</color>
 
-    <!-- Couleur du logo avec transparences -->
+    <!-- Couleur du logo avec petites transparences -->
     <color name="colorOrangeTrans">#8CD9612B</color>
     <color name="colorPurpleTrans">#8C8A1F76</color>
+
+    <!-- Couleur du logo avec grandes trabsparences -->
+    <color name="colorOrangeTransparent">#33D9612B</color>
+    <color name="colorPurpleTranparent">#338A1F76</color>
 
     <!-- Couleur du fond d'ecran -->
     <color name="colorBackground">#ECECEC</color>
 
     <!-- Couleur du text -->
     <color name="colorText">#000000</color>
+    <color name="colorTextHint">#ACACAC</color>
 
     <!-- Couleur des boutons -->
     <color name="colorButton">#D8D8D8</color>
