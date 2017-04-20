@@ -3,49 +3,61 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Créer un nouveau salon"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_nom_salon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nom du salon" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Créer un nouveau salon"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:id="@+id/tv_modif_salon"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Date de l'évènement"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:layout_marginBottom="20dp"/>
+            <EditText
+                android:id="@+id/et_nom_salon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom du salon" />
 
-    <DatePicker
-        android:id="@+id/dp_salon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date de l'évènement"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
 
-    </DatePicker>
+            <DatePicker
+                android:id="@+id/dp_salon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+            </DatePicker>
 
 
-    <EditText
-        android:id="@+id/et_lieu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Lieu"/>
+            <EditText
+                android:id="@+id/et_lieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Lieu"/>
 
-    <Button
-        android:id="@+id/btn_salon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Créer"
-        android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/btn_salon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Créer"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

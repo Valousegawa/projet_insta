@@ -2,7 +2,6 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar.Fullscreen">
-        <!-- Activities -->
             <!-- Background for all views -->
             <item name="android:windowBackground">@color/colorBackground</item>
             <item name="android:paddingRight">10dp</item>

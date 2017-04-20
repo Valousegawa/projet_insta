@@ -17,7 +17,7 @@ public class Contact {
     private String numMobile;
     private String email;
     private String dateNaissance;
-    private String formationActuellle;
+    private String formationActuelle;
     private String[] diplome;
     private String formationSouhaitee;
 
@@ -25,9 +25,12 @@ public class Contact {
 
     }
 
-    public Contact(String nom, String prenom, String adresse, String codePostal, String ville,
-                   String numTel, String numMobile, String email, String dateNaissance,
-                   String formationActuellle, String[] diplome, String formationSouhaitee) {
+    public Contact(int id, int idSalon, String nom, String prenom, String adresse,
+                   String codePostal, String ville, String numTel, String numMobile,
+                   String email, String dateNaissance, String formationActuelle,
+                   String[] diplome, String formationSouhaitee) {
+        this.id = id;
+        this.idSalon = idSalon;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -37,10 +40,11 @@ public class Contact {
         this.numMobile = numMobile;
         this.email = email;
         this.dateNaissance = dateNaissance;
-        this.formationActuellle = formationActuellle;
+        this.formationActuelle = formationActuelle;
         this.diplome = diplome;
         this.formationSouhaitee = formationSouhaitee;
     }
+
 
     public int getId() {
         return id;
@@ -90,9 +94,7 @@ public class Contact {
         this.codePostal = codePostal;
     }
 
-    public String getVille() {
-        return ville;
-    }
+    public String getVille() {return ville;}
 
     public void setVille(String ville) {
         this.ville = ville;
@@ -130,12 +132,12 @@ public class Contact {
         this.dateNaissance = dateNaissance;
     }
 
-    public String getFormationActuellle() {
-        return formationActuellle;
+    public String getFormationActuelle() {
+        return formationActuelle;
     }
 
-    public void setFormationActuellle(String formationActuellle) {
-        this.formationActuellle = formationActuellle;
+    public void setFormationActuelle(String formationActuelle) {
+        this.formationActuelle = formationActuelle;
     }
 
     public String[] getDiplome() {
