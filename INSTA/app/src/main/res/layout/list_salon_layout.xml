@@ -7,7 +7,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sélectionner un salon"
+        android:text="@string/select_salon"
         android:textAlignment="center"
         android:textSize="30dp"
         android:layout_marginTop="30dp"/>
@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Aucun salon"/>
+            android:text="@string/any_salon"/>
 
     </LinearLayout>
 

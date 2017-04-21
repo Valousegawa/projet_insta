@@ -29,7 +29,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
                         android:ems="10"
-                        android:hint="Nom"
+                        android:hint="@string/nom"
                         android:inputType="textPersonName" />
 
                     <EditText
@@ -37,7 +37,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Prénom"
+                        android:hint="@string/prenom"
                         android:inputType="textPersonName" />
 
                     <TextView
@@ -45,7 +45,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Date de naissance"
+                        android:text="@string/bd"
                         android:textAlignment="center"
                         android:textSize="20dp"/>
 
@@ -55,7 +55,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:ems="10"
-                        android:hint="Date de naissance"
                          />
 
                     <EditText
@@ -63,7 +62,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Adresse"
+                        android:hint="@string/adress"
                         android:inputType="textPostalAddress" />
 
                     <EditText
@@ -71,21 +70,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Code Postal" />
+                        android:hint="@string/cp" />
 
                     <EditText
                         android:id="@+id/et_ville"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Ville" />
+                        android:hint="@string/ville" />
 
                     <EditText
                         android:id="@+id/et_fixe"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Fixe"
+                        android:hint="@string/fixe"
                         android:inputType="phone" />
 
                     <EditText
@@ -93,7 +92,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Mobile"
+                        android:hint="@string/mobile"
                         android:inputType="phone" />
 
                     <EditText
@@ -101,14 +100,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="E-Mail"
+                        android:hint="@string/mail"
                         android:inputType="textEmailAddress" />
 
                     <Button
                         android:id="@+id/btn_next"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Suivant"
+                        android:text="@string/next"
                         android:layout_gravity="center"/>
 
 
@@ -136,7 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
-                        android:text="Précédent" />
+                        android:text="@string/prev" />
 
                     <EditText
                         android:id="@+id/et_dip"
@@ -144,14 +143,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:ems="10"
-                        android:hint="Diplome obtenu" />
+                        android:hint="@string/text_dip" />
 
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Formation souhaitée"
+                        android:text="@string/formation_souhaitee"
                         android:textAlignment="center" />
 
                     <RadioGroup
@@ -163,13 +162,13 @@
                             android:id="@+id/rb_res"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="BTS SIO option Réseaux" />
+                            android:text="@string/bts_sio_res" />
 
                         <RadioButton
                             android:id="@+id/rb_dev"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="BTS SIO option Logiciel" />
+                            android:text="@string/bts_sio_dev" />
 
                         <RadioGroup
                             android:id="@+id/rg_type"
@@ -181,19 +180,19 @@
                                 android:id="@+id/rb_init"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Initiale" />
+                                android:text="@string/init" />
 
                             <RadioButton
                                 android:id="@+id/rb_alt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Alternance" />
+                                android:text="@string/alt" />
 
                             <RadioButton
                                 android:id="@+id/rb_dunno"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Ne sais pas" />
+                                android:text="@string/dunno" />
                         </RadioGroup>
 
                         <View
@@ -205,13 +204,13 @@
                             android:id="@+id/rb_ana_dev"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Analyste logiciel" />
+                            android:text="@string/ana_dev" />
 
                         <RadioButton
                             android:id="@+id/rbb_ana_res"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Analyste réseaux" />
+                            android:text="@string/ana_res" />
 
                         <View
                             android:layout_width="fill_parent"
@@ -222,13 +221,13 @@
                             android:id="@+id/rb_archi_dev"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Architecte logiciel" />
+                            android:text="@string/archi_dev" />
 
                         <RadioButton
                             android:id="@+id/archi_res"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Architecte réseaux" />
+                            android:text="@string/archi_res" />
 
                         <Button
                             android:id="@+id/btn_valider"
@@ -236,7 +235,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:text="Valider" />
+                            android:text="@string/valider" />
                     </RadioGroup>
                 </LinearLayout>
             </ScrollView>

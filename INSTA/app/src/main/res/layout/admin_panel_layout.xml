@@ -21,7 +21,7 @@
             android:id="@+id/btn_creer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Créer un salon"
+            android:text="@string/add"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_weight="1"/>
@@ -30,7 +30,7 @@
             android:id="@+id/btn_modif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Modifier un salon"
+            android:text="@string/modify"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_weight="1"/>
@@ -39,7 +39,7 @@
             android:id="@+id/btn_clot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Cloturer un salon"
+            android:text="@string/close"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_weight="1"/>
@@ -48,7 +48,7 @@
             android:id="@+id/btn_suppr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Supprimer un salon"
+            android:text="@string/delete"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_weight="1"/>
@@ -57,7 +57,7 @@
             android:id="@+id/btn_mdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Modifier le mot de passe"
+            android:text="@string/modify_pw"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_weight="1"/>
