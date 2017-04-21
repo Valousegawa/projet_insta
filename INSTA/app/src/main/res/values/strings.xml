@@ -1,3 +1,64 @@
 <resources>
     <string name="app_name">INSTA</string>
+
+    <!-- activity_main.xml -->
+    <string name="admin_panel">Admin Panel</string>
+
+    <!-- admin_panel_layout.xml -->
+    <string name="add">Créer un salon</string>
+    <string name="modify">Modifier un salon</string>
+    <string name="close">Cloturer un salon</string>
+    <string name="delete">Supprimer un salon</string>
+    <string name="modify_pw">Modifier le mot de passe</string>
+
+    <!-- connexion_layout.xml -->
+    <string name="text_admin_conn">Connexion administrateur</string>
+    <string name="user">Nom d\'utilisateur</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="connexion">Connexion</string>
+
+
+    <!-- contact_layout.xml -->
+    <string name="nom">Nom</string>
+    <string name="prenom">Prénom</string>
+    <string name="bd">Date de naissance</string>
+    <string name="adress">Adresse</string>
+    <string name="cp">Code Postal</string>
+    <string name="ville">Ville</string>
+    <string name="fixe">N° fixe</string>
+    <string name="mobile">N° mobile</string>
+    <string name="mail">Mail</string>
+    <string name="next">Suivant</string>
+
+
+    <string name="prev">Précédent</string>
+    <string name="text_dip">Diplôme obtenu</string>
+    <string name="formation_souhaitee">Formation souhaitée</string>
+    <string name="bts_sio_res">BTS SIO Option SISR</string>
+    <string name="bts_sio_dev">BTS SIO Option SLAM</string>
+    <string name="init">Initiale</string>
+    <string name="alt">Alternance</string>
+    <string name="dunno">Ne sais pas</string>
+    <string name="ana_dev">Analyste logiciel</string>
+    <string name="ana_res">Analyste réseau</string>
+    <string name="archi_dev">Architecte logiciel</string>
+    <string name="archi_res">Architecte réseau</string>
+    <string name="valider">Valider</string>
+
+    <!-- list_salon_layout.xml -->
+    <string name="select_salon">Sélectionner un salon</string>
+    <string name="any_salon">Aucun salon</string>
+
+    <!-- new_password_layout.xml -->
+    <string name="change_mdp">Changer de mot de passe</string>
+    <string name="old_mdp">Ancien mot de passe</string>
+    <string name="new_mdp">Nouveau mot de passe</string>
+    <string name="new_mdp2">Resaisir le mot de passe</string>
+
+    <!-- salon_layout.xml -->
+    <string name="add_salon">Créer un nouveau salon</string>
+    <string name="salon_nom">Nom du salon</string>
+    <string name="lieu">Lieu</string>
+    <string name="salon_date">Date de l\'évènement</string>
+    <string name="creer">Créer</string>
 </resources>

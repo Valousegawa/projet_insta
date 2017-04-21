@@ -29,7 +29,7 @@
             android:id="@+id/btn_admin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Admin Panel"
+            android:text="@string/admin_panel"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="139dp"
             android:layout_marginTop="40dp"/>
