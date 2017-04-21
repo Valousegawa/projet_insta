@@ -1,6 +1,7 @@
 package com.a2017.dev.insta.insta;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import com.a2017.dev.insta.insta.model.Salon;
 import com.a2017.dev.insta.insta.model.SalonAdapter;
 import com.a2017.dev.insta.insta.model.SalonDataSource;
+import com.a2017.dev.insta.insta.util.Utils;
 
 import java.util.ArrayList;
 
@@ -23,6 +25,7 @@ public class ClotureSalonActivity extends Activity{
     private ListView listView;
     private SalonDataSource mysql;
     private SalonAdapter adapter;
+    private Utils utils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class ClotureSalonActivity extends Activity{
 
         deserialiser();
 
+        utils = new Utils();
         mysql = new SalonDataSource(this);
         mysql.open();
 
@@ -45,9 +49,20 @@ public class ClotureSalonActivity extends Activity{
         listView.setEmptyView(findViewById(R.id.empty_list));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mysql.clotureSalon(tabSalon.get(position));
-                finish();
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                utils.dialogBox(ClotureSalonActivity.this,"Cloturer le salon ?", "Etes vous sûr ?").
+                        setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mysql.clotureSalon(tabSalon.get(position));
+                                finish();
+                            }
+                        }).setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Nothing
+                            }
+                        }).show();
             }
         });
         ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
