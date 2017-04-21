@@ -64,10 +64,18 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         salon.open();
-        ArrayList<Salon> tabSalon = salon.getAllSalonActive();
+        final ArrayList<Salon> tabSalon = salon.getAllSalonActive();
         adapter = new SalonAdapter(this, tabSalon);
         listView.setAdapter(adapter);
         listView.setEmptyView(findViewById(R.id.empty_list));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent contact = new Intent(MainActivity.this, ContactActivity.class);
+                contact.putExtra("id_salon", tabSalon.get(position).getId());
+                startActivity(contact);
+            }
+        });
         ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
         System.out.println("Activity focused");
     }
