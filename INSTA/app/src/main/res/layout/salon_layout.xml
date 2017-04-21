@@ -14,7 +14,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Créer un nouveau salon"
+                android:text="@string/add_salon"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:id="@+id/tv_modif_salon"
@@ -25,12 +25,12 @@
                 android:id="@+id/et_nom_salon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nom du salon" />
+                android:hint="@string/salon_nom" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Date de l'évènement"
+                android:text="@string/salon_date"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:layout_marginBottom="20dp"/>
@@ -49,13 +49,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Lieu"/>
+                android:hint="@string/lieu"/>
 
             <Button
                 android:id="@+id/btn_salon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Créer"
+                android:text="@string/creer"
                 android:layout_gravity="center"/>
 
         </LinearLayout>
